@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margelet - Мессенджер нового поколения</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --background: #0A0A0A;
+            --surface: rgba(255, 255, 255, 0.05);
+            --text: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 15rem 5% 8rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--primary), #FF8E53);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Features */
+        .features {
+            padding: 6rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Screenshot Section */
+        .screenshot {
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .mockup {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .feature-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="glass">
+        <nav>
+            <div class="logo">Margelet</div>
+            <div class="nav-links">
+                <a href="#features">Возможности</a>
+                <a href="#download">Скачать</a>
+                <a href="#about">О проекте</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Мессенджер, который вы заслуживаете</h1>
+        <p class="subtitle">Стеклянный дизайн, открытый исходный код, полный контроль над вашими данными. <br>Без рекламы, без скрытых платежей, без компромиссов.</p>
+        <a href="#download" class="cta-button">Узнать о запуске первым</a>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature-card glass">
+            <div class="feature-icon">💬</div>
+            <h3 class="feature-title">Умные чаты</h3>
+            <p>Личные сообщения, группы до 100 000 участников, каналы с неограниченной аудиторией</p>
+        </div>
+        
+        <div class="feature-card glass">
+            <div class="feature-icon">🤖</div>
+            <h3 class="feature-title">Конструктор ботов</h3>
+            <p>Создавайте ботов без программирования с помощью визуального конструктора</p>
+        </div>
+        
+        <div class="feature-card glass">
+            <div class="feature-icon">🎨</div>
+            <h3 class="feature-title">Полная кастомизация</h3>
+            <p>Темы, шрифты, оформление — настройте всё под свой стиль</p>
+        </div>
+        
+        <div class="feature-card glass">
+            <div class="feature-icon">🔒</div>
+            <h3 class="feature-title">Ваши данные под контролем</h3>
+            <p>Выбирайте где хранятся ваши данные: локально или в зашифрованном облаке</p>
+        </div>
+        
+        <div class="feature-card glass">
+            <div class="feature-icon">📞</div>
+            <h3 class="feature-title">HD-звонки</h3>
+            <p>Кристально чистые голосовые и видеозвонки с эффектом фона</p>
+        </div>
+        
+        <div class="feature-card glass">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Молниеносная скорость</h3>
+            <p>Оптимизированный код обеспечивает быструю работу даже на слабых устройствах</p>
+        </div>
+    </section>
+
+    <section class="screenshot">
+        <div class="mockup glass">
+            <img src="https://placehold.co/800x450/1a1a1a/FFFFFF/png?text=Интерфейс+Margelet+в+стиле+стеклянного+морфизма" alt="Интерфейс Margelet" style="width: 100%; display: block;">
+        </div>
+    </section>
+
+    <section id="download" style="padding: 6rem 5%; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Скоро будет доступно</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Проект находится в активной разработке. Подпишитесь на уведомление о запуске.</p>
+        <a href="#" class="cta-button">Уведомить о запуске</a>
+    </section>
+
+    <footer class="glass">
+        <p>© 2025 Margelet. Открытый мессенджер нового поколения.</p>
+        <p style="color: var(--text-secondary); margin-top: 1rem;">Стеклянный дизайн. Полная свобода. Ваши правила.</p>
+    </footer>
+</body>
+</html>
